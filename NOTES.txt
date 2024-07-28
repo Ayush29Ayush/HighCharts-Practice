@@ -1,0 +1,64 @@
+#! HighCharts Notes
+
+- HighCharts is a JavaScript library for creating interactive charts. It is based on [Plotly](https://plotly.com/javascript/), which is an open-source charting library.
+
+1. Create a index.html file in the root directory of your project
+2. Write the base template or just use the snippet by typing "!"
+3. Add the cdn for HighCharts
+4. This will be the base template for your project
+"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  </head>
+  <body>
+    <h1>HighCharts</h1>
+    <div id="container"></div>
+  </body>
+  <script>
+    // document.addEventListener('DOMContentLoaded', function() {
+
+    // })
+    document.addEventListener("DOMContentLoaded", () => {
+      Highcharts.chart("container", {
+        title: {text: "Height Chart",}, #! This is the title of the chart
+        xAxis:{}, #! This is the x-axis which will contain the categories
+        yAxis:{}, #! This is the y-axis which will contain the values
+        series: [], #! This is the series which contains the actual data points. It is used to define where we want to plot the data over the graph. This will be a array of objects
+      });
+    });
+  </script>
+</html>
+"
+
+#! Line Chart
+"
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      Highcharts.chart("container", {
+        title: { text: "Line Chart for Height" },
+        xAxis: {
+          categories: ["2000", "2001", "2002", "2003", "2004", "2005"],
+        },
+        yAxis: {
+          title: { text: "Height (cm)" },
+        },
+        series: [
+          {
+            name: "Ayush",
+            data: [160, 163, 164, 168, 169, 171],
+          },
+          {
+            name: "Senapati",
+            data: [130, 135, 145, 162, 174, 176],
+          },
+        ],
+      });
+    });
+  </script>
+"
+
