@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  </head>
+  <body>
+    <h1>HighCharts</h1>
+    <div id="container"></div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      Highcharts.chart("container", {
+        title: { text: "Line Chart for Height" },
+        xAxis: {
+          categories: ["2000", "2001", "2002", "2003", "2004", "2005"],
+        },
+        yAxis: {
+          title: { text: "Height (cm)" },
+        },
+        tooltip: {
+            animation: true, //! Set this to false if you want to disable the tooltip animation
+            useHTML: true, //! Use HTML to render the contents of the tooltip instead of SVG. Using HTML allows advanced formatting like tables and images in the tooltip.
+            enabled: true, //! Set this to false if you want to disable the tooltip
+            followPointer: false, //! Set this to true if you want the tooltip to follow the mouse cursor
+            followTouchMove: false, //! Set this to true if you want the tooltip to follow the touch cursor. Used for mobile phones
+            shared: false, //! Set this to true if you want the tooltip to be shared between multiple lines of the chart
+            snap: false, //! Set this to true if you want the tooltip to be positioned based on the mouse cursor
+            split: false, //! Set this to true if you want the tooltip to be split into multiple lines
+            headerFormat: '<span style="font-size: 14px; font-weight: bold">{point.key}</span><br/>', //! Set the header format of the tooltip
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>', //! Set the point format of the tooltip
+            valueDecimals: 2, //! Set the value decimals of the tooltip
+            valuePrefix: "= ", //! Set the value prefix of the tooltip
+            valueSuffix: "cm", //! Set the value suffix of the tooltip
+        },
+        series: [
+          {
+            name: "Ayush",
+            data: [160, 163, 164, 168, 169, 171],
+          },
+          {
+            name: "Senapati",
+            data: [130, 135, 145, 162, 174, 176],
+          },
+        ],
+      });
+    });
+  </script>
+</html>
